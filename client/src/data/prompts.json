@@ -1,0 +1,157 @@
+{
+  "values": [
+    {
+      "id": "values_01",
+      "prompt": "What did you spend the most time or energy on today?"
+    },
+    {
+      "id": "values_02",
+      "prompt": "What felt worth your time today, even if it was difficult?"
+    },
+    { "id": "values_03", "prompt": "What did you say no to today — and why?" },
+    {
+      "id": "values_04",
+      "prompt": "What would you have regretted not doing today?"
+    },
+    {
+      "id": "values_05",
+      "prompt": "When today did you feel most aligned with yourself?"
+    },
+    {
+      "id": "values_06",
+      "prompt": "What do your actions today suggest you care about most right now?"
+    },
+    {
+      "id": "values_07",
+      "prompt": "What felt like a waste of your energy today?"
+    },
+    {
+      "id": "values_08",
+      "prompt": "If today repeated for a year, what would concern you?"
+    }
+  ],
+  "emotions": [
+    {
+      "id": "emotions_01",
+      "prompt": "What moment today triggered the strongest reaction in you?"
+    },
+    { "id": "emotions_02", "prompt": "What drained your energy today?" },
+    {
+      "id": "emotions_03",
+      "prompt": "What gave you even a small sense of relief today?"
+    },
+    {
+      "id": "emotions_04",
+      "prompt": "When today did you feel tense or guarded?"
+    },
+    {
+      "id": "emotions_05",
+      "prompt": "What emotion did you try to ignore today?"
+    },
+    {
+      "id": "emotions_06",
+      "prompt": "What situation today felt heavier than it should have?"
+    },
+    {
+      "id": "emotions_07",
+      "prompt": "What helped you feel calmer or more grounded today?"
+    },
+    {
+      "id": "emotions_08",
+      "prompt": "What emotion kept showing up today, even quietly?"
+    }
+  ],
+  "identity": [
+    {
+      "id": "identity_01",
+      "prompt": "When did you feel most like yourself today?"
+    },
+    {
+      "id": "identity_02",
+      "prompt": "What part of yourself did you hide today?"
+    },
+    {
+      "id": "identity_03",
+      "prompt": "What role did you play today that felt natural to you?"
+    },
+    {
+      "id": "identity_04",
+      "prompt": "What felt out of character for you today?"
+    },
+    {
+      "id": "identity_05",
+      "prompt": "What do you wish people understood about you right now?"
+    },
+    {
+      "id": "identity_06",
+      "prompt": "What label or expectation felt limiting today?"
+    },
+    {
+      "id": "identity_07",
+      "prompt": "What version of yourself showed up most today?"
+    },
+    {
+      "id": "identity_08",
+      "prompt": "If someone watched your day, what would they assume about you?"
+    }
+  ],
+  "growth": [
+    { "id": "growth_01", "prompt": "What did you avoid today — and why?" },
+    {
+      "id": "growth_02",
+      "prompt": "What felt slightly uncomfortable but necessary today?"
+    },
+    { "id": "growth_03", "prompt": "What small win did you overlook today?" },
+    {
+      "id": "growth_04",
+      "prompt": "What did today teach you about your limits?"
+    },
+    {
+      "id": "growth_05",
+      "prompt": "What pattern from your past showed up again today?"
+    },
+    {
+      "id": "growth_06",
+      "prompt": "What would tomorrow feel easier if you addressed today?"
+    },
+    {
+      "id": "growth_07",
+      "prompt": "What did you handle better than you used to?"
+    },
+    {
+      "id": "growth_08",
+      "prompt": "What surprised you about yourself recently?"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "relationships_01",
+      "prompt": "Who affected your mood the most today?"
+    },
+    {
+      "id": "relationships_02",
+      "prompt": "When today did you feel most understood — or misunderstood?"
+    },
+    {
+      "id": "relationships_03",
+      "prompt": "What interaction drained you today?"
+    },
+    {
+      "id": "relationships_04",
+      "prompt": "What interaction gave you energy today?"
+    },
+    {
+      "id": "relationships_05",
+      "prompt": "What did you hold back from saying today?"
+    },
+    {
+      "id": "relationships_06",
+      "prompt": "Who did you feel closest to today, and why?"
+    },
+    { "id": "relationships_07", "prompt": "What boundary felt unclear today?" },
+    {
+      "id": "relationships_08",
+      "prompt": "What do your recent interactions say about what you need from others?"
+    }
+  ]
+}
