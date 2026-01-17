@@ -39,18 +39,22 @@ STOPWORDS = {
     "the", "a", "an", "and", "or", "but", "to", "of", "in", "on", "for", "with", "at", "by",
     "is", "are", "was", "were", "be", "been", "it", "that", "this", "as",
     "i", "you", "we", "my", "your", "our", "me", "us", "they", "them", "he", "she", "his", "her",
-    "today", "week", "really", "just", "like", "got", "get"
+    "today", "week", "really", "just", "like", "got", "get", "what", "when", "how", "so", "too",
+    "not", "no", "im", "ive", "cant", "dont", "didnt", "wont", "would", "could", "should",
+    "feel", "feeling", "felt", "think", "thinking", "thought", "know", "knowing", "known"
 }
 
 # Very lightweight lexicon-based sentiment analysis
 # (for demo purposes; replace with a proper library for production)
 POS_WORDS = {
     "calm", "good", "great", "proud", "excited", "happy", "relieved", "grateful",
-    "energized", "hopeful", "confident", "peaceful", "motivated"
+    "energized", "hopeful", "confident", "peaceful", "motivated", "joyful", "content",
+    "satisfied", "optimistic", "enthusiastic", "cheerful", "encouraged", "fulfilled",
 }
 NEG_WORDS = {
     "tired", "anxious", "worried", "sad", "angry", "overwhelmed", "stressed",
-    "upset", "frustrated", "guilty", "lonely", "burnt", "burned"
+    "upset", "frustrated", "guilty", "lonely", "burnt", "burned", "disappointed",
+    "discouraged", "fearful", "insecure", "nervous", "resentful", "unhappy", "uneasy", "vulnerable"
 }
 
 PHRASE_PATTERNS = [
