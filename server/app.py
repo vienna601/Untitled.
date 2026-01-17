@@ -2,7 +2,7 @@ from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import List
-from logic.speech_to_text import transcribe_with_elevenlabs
+from logic.speechToText import transcribe_with_elevenlabs
 from logic.promptPicker import get_prompt_for_today
 from logic.insightEngine import generate_weekly_insights
 
