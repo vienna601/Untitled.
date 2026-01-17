@@ -1,5 +1,5 @@
 Requirements:
 
 ```
-pip install fastapi uvicorn pydantic google-genai
+pip install fastapi uvicorn pydantic google-genai elevenlabs python-multipart
 ```

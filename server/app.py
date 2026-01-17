@@ -1,8 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import List
-
+from logic.speech_to_text import transcribe_with_elevenlabs
 from logic.promptPicker import get_prompt_for_today
 from logic.insightEngine import generate_weekly_insights
 
@@ -64,3 +64,29 @@ def insights_weekly(payload: WeeklyInsightRequest):
     """
     entries_as_dicts = [e.model_dump() for e in payload.entries]
     return generate_weekly_insights(entries_as_dicts)
+
+# Endpoint for speech-to-text transcription
+@app.post("/stt/transcribe")
+async def stt_transcribe(file: UploadFile = File(...), language_code: str | None = None):
+    """
+    Accepts an audio file upload and returns transcription text.
+    Frontend will send multipart/form-data with a Blob.
+    """
+    # Basic content-type guard (don’t overdo it; browsers vary)
+    if not file.content_type or not file.content_type.startswith(("audio/", "video/")):
+        raise HTTPException(status_code=400, detail=f"Unsupported content type: {file.content_type}")
+
+    audio_bytes = await file.read()
+    if not audio_bytes:
+        raise HTTPException(status_code=400, detail="Empty audio file")
+
+    try:
+        text = transcribe_with_elevenlabs(
+            audio_bytes,
+            filename=file.filename or "audio.webm",
+            language_code=language_code,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"STT failed: {str(e)}")
+
+    return {"text": text}
