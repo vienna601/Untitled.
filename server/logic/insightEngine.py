@@ -42,7 +42,11 @@ STOPWORDS = {
     "i", "you", "we", "my", "your", "our", "me", "us", "they", "them", "he", "she", "his", "her",
     "today", "week", "really", "just", "like", "got", "get", "what", "when", "how", "so", "too",
     "not", "no", "im", "ive", "cant", "dont", "didnt", "wont", "would", "could", "should",
-    "feel", "feeling", "felt", "think", "thinking", "thought", "know", "knowing", "known"
+    "feel", "feeling", "felt", "think", "thinking", "thought", "know", "knowing", "known",
+    "had", "make", "making", "made", "go", "going", "went", "see", "seeing", "seen",
+    "say", "saying", "said", "want", "wanting", "wanted", "need", "needing", "needed",
+    "have", "having", "had", "also", "even", "still", "though", "though", "however",
+    "very", "much", "many", "some", "any", "more", "most", "all", "each", "every"
 }
 
 # Very lightweight lexicon-based sentiment analysis
@@ -172,9 +176,10 @@ def _build_theme_candidates(signals: Dict[str, Any]) -> List[Tuple[str, int]]:
 SYSTEM_PROMPT = """
 You are analyzing a set of personal journal entries.
 
-Your task is to extract high-quality, meaningful TOPICS from the user's reflections.
+Your task is to extract high-quality, meaningful TOPICS from the user's reflections,
+and determine the overall EMOTIONAL POLARITY associated with each topic.
 
-IMPORTANT RULES:
+IMPORTANT RULES FOR TOPICS:
 - Focus on concrete nouns, proper nouns, and real-life topics.
 - Examples of GOOD topics: "university applications", "family conversations", "teaching career", "music", "gardening", "self-doubt".
 - Examples of BAD topics: "having", "feeling", "thinking", "being", "doing", "time".
@@ -190,10 +195,19 @@ INSTEAD:
 - Prioritize semantic importance over repetition.
 - Merge similar topics into a single clear theme.
 
+EMOTIONAL POLARITY RULES:
+- Assign ONE overall polarity per theme based on the user's reflection.
+- Allowed values ONLY: "positive", "neutral", or "negative".
+- Base polarity on emotional tone. Pay attention to adjectives that indicate feelings.
+- If mixed emotions are present:
+  - Choose "neutral" unless one emotional direction clearly dominates.
+- Do NOT infer emotions that are not explicitly or strongly implied.
+
 For each theme:
 - Provide a clear, human-readable theme name.
 - Extract 2–3 specific details directly from the user's entries
   (names, places, activities, situations, or concrete references).
+- Assign an emotional polarity.
 
 Return ONLY valid JSON in the following format:
 
@@ -201,6 +215,7 @@ Return ONLY valid JSON in the following format:
   "themes": [
     {
       "theme": "string",
+      "polarity": "string",
       "details": ["string", "string", "string"]
     }
   ]

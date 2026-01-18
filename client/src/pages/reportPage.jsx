@@ -74,8 +74,10 @@ export default function ReportPage({ onNavigate }) {
     return { width: `${size}px`, height: `${size}px` };
   };
 
+  const overallPolarity = insights?.polarity || "neutral";
+
   return (
-    <div className="report-page">
+    <div className={`report-page report-page--${overallPolarity}`}>
       <div className="report-page__header">
         <h1 className="report-page__title">Untitled.</h1>
       </div>

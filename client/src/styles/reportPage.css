@@ -33,6 +33,23 @@ body {
   position: relative;
   overflow: hidden;
 }
+/* Positive → warm, encouraging */
+.report-page--positive {
+  background: linear-gradient(180deg, #ffe8d0, #fee8aa);
+  /* soft peach → warm amber */
+}
+
+/* Neutral → calm green-ish, reflective */
+.report-page--neutral {
+  background: linear-gradient(180deg, #c5e9c4, #9de5aa);
+  /* mint → soft sage */
+}
+
+/* Negative → cool, subdued */
+.report-page--negative {
+  background: linear-gradient(180deg, #d9e5ff, #d5b6e9);
+  /* pale blue → muted steel */
+}
 
 .report-page__header {
   position: absolute;
@@ -74,14 +91,15 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 600px;
-  max-width: 1200px;
+  height: 800px;
+  max-width: 1000px;
 }
 
 .report-page__bubble {
   position: absolute;
   border-radius: 50%;
-  background: #aac7d8;
+  background: rgba(131, 158, 173, 0.3);
+  backdrop-filter: blur(4px);
   display: flex;
   flex-direction: column;
   align-items: center;
