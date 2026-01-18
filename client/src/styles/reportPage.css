@@ -1,6 +1,6 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kapakana:wght@300..400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kapakana:wght@300..400&display=swap");
 
 * {
   margin: 0;
@@ -10,7 +10,7 @@
 
 body {
   margin: 0;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,10 +24,11 @@ body {
 }
 
 .report-page {
-  width: 1280px;
-  height: 832px;
-  background: #DFEBF6;
+  width: 100vw;
+  height: 100vh;
+  background: #dfebf6;
   display: flex;
+  align-items: center;
   flex-direction: column;
   position: relative;
   overflow: hidden;
@@ -42,7 +43,7 @@ body {
 }
 
 .report-page__title {
-  color: #44576D;
+  color: #44576d;
   font-family: "Libre Baskerville", serif;
   font-size: 32px;
   font-style: normal;
@@ -56,7 +57,7 @@ body {
   top: 140px;
   left: 50%;
   transform: translateX(-50%);
-  color: #44576D;
+  color: #44576d;
   font-family: "Kapakana", cursive;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -80,7 +81,7 @@ body {
 .report-page__bubble {
   position: absolute;
   border-radius: 50%;
-  background: #AAC7D8;
+  background: #aac7d8;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,7 +131,7 @@ body {
 }
 
 .report-page__bubble-topic {
-  color: #44576D;
+  color: #44576d;
   text-align: center;
   font-family: "Kapakana", cursive;
   font-optical-sizing: auto;
@@ -165,7 +166,7 @@ body {
 }
 
 .report-page__bubble-details {
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: "Libre Baskerville", serif;
   font-size: 16px;
@@ -206,7 +207,7 @@ body {
 .report-page__back-button {
   background: none;
   border: none;
-  color: #44576D;
+  color: #44576d;
   font-family: "Libre Baskerville", serif;
   font-size: 20px;
   font-style: normal;
@@ -219,13 +220,13 @@ body {
 }
 
 .report-page__back-button::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;
-  background: #44576D;
+  background: #44576d;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -246,7 +247,7 @@ body {
 
 .report-page__loading-text,
 .report-page__no-entries-text {
-  color: #44576D;
+  color: #44576d;
   font-family: "Libre Baskerville", serif;
   font-size: 24px;
   margin-bottom: 20px;
@@ -254,8 +255,8 @@ body {
 
 .report-page__start-button {
   background: none;
-  border: 2px solid #44576D;
-  color: #44576D;
+  border: 2px solid #44576d;
+  color: #44576d;
   font-family: "Libre Baskerville", serif;
   font-size: 18px;
   padding: 12px 24px;
@@ -265,6 +266,6 @@ body {
 }
 
 .report-page__start-button:hover {
-  background: #44576D;
-  color: #FFF;
+  background: #44576d;
+  color: #fff;
 }

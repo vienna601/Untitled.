@@ -1,6 +1,6 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kapakana:wght@300..400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kapakana:wght@300..400&display=swap");
 
 * {
   margin: 0;
@@ -10,7 +10,7 @@
 
 body {
   margin: 0;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,9 +24,9 @@ body {
 }
 
 .entry-page {
-  width: 1280px;
-  height: 832px;
-  background: #DFEBF6;
+  width: 100vw;
+  height: 100vh;
+  background: #dfebf6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +42,7 @@ body {
 }
 
 .entry-page__title {
-  color: #44576D;
+  color: #44576d;
   font-family: "Libre Baskerville", serif;
   font-size: 32px;
   font-style: normal;
@@ -104,7 +104,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #44576D;
+  color: #44576d;
   font-family: "Libre Baskerville", serif;
   font-size: 18px;
   text-align: center;
@@ -116,7 +116,7 @@ body {
 }
 
 .entry-page__prompt {
-  color: #44576D;
+  color: #44576d;
   font-family: "Kapakana", cursive;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -138,11 +138,11 @@ body {
 .entry-page__input {
   width: 100%;
   height: 100%;
-  background: #FFF;
+  background: #fff;
   border: none;
   outline: none;
   padding: 0 60px 0 20px;
-  color: #768A96;
+  color: #768a96;
   font-family: "Libre Baskerville", serif;
   font-size: 20px;
   font-style: normal;
@@ -152,7 +152,7 @@ body {
 }
 
 .entry-page__input::placeholder {
-  color: #768A96;
+  color: #768a96;
 }
 
 .entry-page__enter-button {
@@ -189,7 +189,7 @@ body {
 }
 
 .entry-page__transcribing {
-  color: #768A96;
+  color: #768a96;
   font-family: "Libre Baskerville", serif;
   font-size: 14px;
   text-align: center;
@@ -220,7 +220,7 @@ body {
 .entry-page__view-report {
   background: none;
   border: none;
-  color: #44576D;
+  color: #44576d;
   font-family: "Libre Baskerville", serif;
   font-size: 20px;
   font-style: normal;
@@ -233,13 +233,13 @@ body {
 }
 
 .entry-page__view-report::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;
-  background: #44576D;
+  background: #44576d;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -253,7 +253,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 60px 0;
-  color: #44576D;
+  color: #44576d;
   font-family: "Libre Baskerville", serif;
   font-size: 18px;
 }
