@@ -86,12 +86,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 32px;
 }
 
 .report-page__bubble--primary {
-  width: 350px;
-  height: 350px;
+  width: 500px;
+  height: 500px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -181,7 +181,7 @@ body {
 }
 
 .report-page__bubble--secondary-1 .report-page__bubble-details {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .report-page__bubble--secondary-2 .report-page__bubble-details {
@@ -189,11 +189,11 @@ body {
 }
 
 .report-page__bubble--secondary-3 .report-page__bubble-details {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .report-page__bubble--secondary-4 .report-page__bubble-details {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .report-page__footer {

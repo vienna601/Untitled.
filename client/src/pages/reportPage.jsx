@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "../styles/reportPage.css";
-import demoEntries1 from "../data/demoEntries1.json";
-import demoEntries2 from "../data/demoEntries2.json";
+import demoEntries from "../data/demoEntries.json";
 
 const API_BASE = "http://localhost:8000";
 const STORAGE_KEY = "journal_entries";
@@ -16,10 +15,9 @@ export default function ReportPage({ onNavigate }) {
   const [insights, setInsights] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  //const weekEntries = getWeekEntries();
+  const weekEntries = getWeekEntries();
   //change to demo data
-  //const weekEntries = demoEntries1;
-  const weekEntries = demoEntries2;
+  //const weekEntries = demoEntries;
 
   useEffect(() => {
     if (weekEntries.length > 0) {
@@ -67,7 +65,7 @@ export default function ReportPage({ onNavigate }) {
   const getBubbleSize = (percent, index, maxPercent) => {
     // Primary bubble is larger, others are slightly smaller.
     // We scale by (percent / maxPercent) so the biggest theme is biggest bubble.
-    const base = index === 0 ? 260 : 190;
+    const base = index === 0 ? 360 : 280;
     const minScale = 0.65;
     const maxScale = 1.0;
     const ratio = maxPercent > 0 ? percent / maxPercent : 1;

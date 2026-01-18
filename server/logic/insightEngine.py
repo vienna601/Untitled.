@@ -169,43 +169,43 @@ def _build_theme_candidates(signals: Dict[str, Any]) -> List[Tuple[str, int]]:
 # -----------------------------
 
 #define system prompt for Gemini
-SYSTEM_PROMPT = """You are a supportive self-discovery coach writing a WEEKLY reflection report.
-The user is NOT an experienced journaler. Keep it warm, specific, and non-judgmental.
-Do NOT diagnose or mention therapy. Do NOT mention that you are an AI.
+SYSTEM_PROMPT = """
+You are analyzing a set of personal journal entries.
 
-You MUST produce:
-1) Up to 5 themes that reflect what the USER wrote about in their RESPONSES.
-2) For each theme: a percentage (0–100) based on how frequently it appears relative to the other themes.
-   Percentages must sum to 100.
-3) For each theme: 2–3 concrete details (names, places, specific items, etc.) pulled from the user's entries.
-4) Emotional polarity label: positive / neutral / negative
-5) Repeating phrases (e.g., “I feel…”, “I’m worried…”)
-6) A short narrative summary similar to:
-   “This week, you wrote most about X, Y, Z. You felt most energized when talking about A and B.”
+Your task is to extract high-quality, meaningful TOPICS from the user's reflections.
 
-CRITICAL CONSTRAINTS:
-- Themes must NOT be copied from the app prompts or from the instructions you are given.
-- Do NOT use generic prompt-like labels such as “self-discovery”, “reflection”, “journaling”, “weekly report”, “most common themes”.
-- Theme names should be 1–3 words, natural, and specific.
-- Details must be short fragments (1–4 words each). No full sentences.
-- Never include quotes from the instruction text.
+IMPORTANT RULES:
+- Focus on concrete nouns, proper nouns, and real-life topics.
+- Examples of GOOD topics: "university applications", "family conversations", "teaching career", "music", "gardening", "self-doubt".
+- Examples of BAD topics: "having", "feeling", "thinking", "being", "doing", "time".
 
-Output format: return VALID JSON ONLY with this schema:
+DO NOT:
+- Rank themes by frequency.
+- Select words just because they appear often.
+- Use verbs, filler words, or grammatical artifacts as themes.
+- Use phrases from the prompt text as themes.
+
+INSTEAD:
+- Identify distinct, meaningful subjects the user is actually reflecting on.
+- Prioritize semantic importance over repetition.
+- Merge similar topics into a single clear theme.
+
+For each theme:
+- Provide a clear, human-readable theme name.
+- Extract 2–3 specific details directly from the user's entries
+  (names, places, activities, situations, or concrete references).
+
+Return ONLY valid JSON in the following format:
+
 {
   "themes": [
-    {"theme": "...", "percent": 0, "details": ["...", "...", "..."]}
-  ],
-  "polarity": "positive|neutral|negative",
-  "repeating_phrases": ["..."],
-  "summary": "..."
+    {
+      "theme": "string",
+      "details": ["string", "string", "string"]
+    }
+  ]
 }
-
-Constraints:
-- Keep summary under 80 words.
-- Avoid clichés. Avoid excessive cheerleading.
-- If entries are sparse, acknowledge lightly and still provide a helpful summary.
 """
-
 
 def _gemini_weekly_json(entries: List[Dict[str, Any]], signals: Dict[str, Any]) -> Dict[str, Any]:
     """Gemini produces structured JSON for themes + percents + details."""
